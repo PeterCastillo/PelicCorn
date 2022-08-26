@@ -1,0 +1,75 @@
+:root {
+    --color-font: #3e0080;
+    --color-font-secondary: #190033;
+    --color-letter: #f2e6ff;
+}
+
+.nav__container {
+    width: 100vw;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-font);
+    color: var(--color-letter);
+}
+.nav {
+    padding: 0.7rem;
+    max-width: 60rem;
+    margin: auto;
+}
+.nav__navegation {
+    display: flex;
+    font-size: 1rem;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.nav__navegation > span {
+    font-size: 1.7rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    line-height: 3rem;
+}
+.nav__navegation__search {
+    position: relative;
+    flex-grow: 1;
+}
+.nav__navegation__search input {
+    width: 100%;
+    height: 100%;
+    padding: 0.2rem;
+    border: none;
+    padding-left: 1rem;
+    border-radius: 0.7rem;
+    box-sizing: border-box;
+    outline: none;
+}
+.nav__navegation__search div {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 2rem;
+    background-color: royalblue;
+    border-radius: 0 0.7rem 0.7rem 0rem; 
+    background-color: var(--color-font-secondary);
+    cursor: pointer;
+}
+.nav__categories {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.nav__categories__category {
+    cursor: pointer;
+    border-radius: 0.7rem;
+    padding: 0.4rem;
+}
+.nav__categories__category:hover {
+    background-color: var(--color-letter);
+    color: var(--color-font);
+}
