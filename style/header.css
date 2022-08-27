@@ -5,11 +5,13 @@
 }
 
 .nav__container {
-    width: 100vw;
     justify-content: center;
     font-family: 'Poppins', sans-serif;
     background-color: var(--color-font);
     color: var(--color-letter);
+    position: fixed;
+    width: 100vw;
+    z-index: 25;
 }
 .nav {
     padding: 0.7rem;

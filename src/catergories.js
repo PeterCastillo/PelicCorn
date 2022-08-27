@@ -9,6 +9,9 @@ const fetchData = async() => {
     const data = await res.json();
     const categories = data.genres
     categories.forEach(element => {
+        if(element.name == 'Documentary'|| element.name == 'Science Fiction' || element.name == 'TV Movie'){
+            return
+        }
         let span = document.createElement('span');
         span.innerHTML = element.name;
         span.classList.add('nav__categories__category');
