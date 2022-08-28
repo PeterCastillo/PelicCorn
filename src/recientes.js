@@ -1,26 +1,31 @@
-const recientesContainer = document.querySelector('.seccion__recientes__movies');
+const moviesContainer = document.querySelector('.seccion__recientes__movies');
+const moviesType = document.querySelector('.seccion__name')
 
 const recientes = async() => {
     const {data} = await api(`discover/movie`,)
     const movies = await data.results
+    moviesSelected(movies , 'Recientes')
+};
+
+const moviesSelected = (movies , type) => {
+    moviesType.innerHTML = type;
+    moviesContainer.innerHTML = '';
     movies.forEach(element => {
         let div = document.createElement('div');
         div.classList.add('movie');
-        div.dataset.id = element.id
         const divContent = `
-            <img class="movie__img" src="https://image.tmdb.org/t/p/w300${element.poster_path}" alt="${element.title}">
+            <img class="movie__img" src="https://image.tmdb.org/t/p/w300${element.poster_path}" alt="${element.title}" data-id="${element.id}">
             <span class="movie__name">${element.title}</span>
-            <div class="movie__info" date-id="${element.id}">
+            <div class="movie__info" data-id="${element.id}">
                 <div>
                     <span>${element.title}</span>
-                    <i class="fa-solid fa-plus"></i>
+                    <i class="fa-solid fa-plus" date-id="${element.id}"></i>
                 </div>
                 <span>${element.title}</span>
             </div>
         `
         div.innerHTML = divContent
         fragmento.appendChild(div);
-        recientesContainer.appendChild(fragmento)
+        moviesContainer.appendChild(fragmento)
     });
-}
-
+};

@@ -16,6 +16,25 @@ const categorias = async() => {
     });
 };
 
+categoriasContainter.addEventListener('click' , (e) => {
+    selectCategoria(e);
+});
+
+const selectCategoria = (e) => {
+    if(e.target.hasAttribute('data-id')){
+        location.hash = `/Categoria/${e.target.innerHTML}/${e.target.dataset.id}`
+    }
+};
+
+const searchCategoria = async(id, category) => {
+    const {data} = await api('discover/movie', {
+        params: {
+            with_genres: id,
+        },
+    });
+    const movies = data.results;
+    moviesSelected(movies,category);
+};
 
 
 

@@ -15,6 +15,7 @@
 .seccion__name {
     background-color: var(--color-font);
     color: var(--color-letter);
+    display: inline-block;
 }
 .seccion__recientes__movies {
     display: flex;
@@ -132,6 +133,50 @@
     border-radius: 0.7rem;
 }
 
+.movie__details {
+    display: flex;
+    width: 100%;
+    background-color: var(--color-letter);
+    border-radius: 0.7rem;
+    padding: 0.8rem;
+    gap: 1rem;
+}
+
+.movie__details__img {
+    max-width: 20rem;
+}
+
+.movie__details__img img{
+    border-radius: 0.7rem;
+}
+.movie__details__info {
+    max-width: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.movie__details__info > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.seccion__recientes {
+    margin: auto;
+}
+.movie__details__info button {
+    background-color: var(--color-font);
+    color: var(--color-letter);
+    border: solid 2px var(--color-font);
+    padding: 0.5rem;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    font-weight: bold;
+} 
+.movie__details__info button:hover {
+    color: var(--color-font);
+    background-color: var(--color-letter);
+}
 
 @media screen and (max-width:976px){
     .seccion__recientes {
@@ -140,16 +185,20 @@
     .section__movies {
         width: 60rem;
     }
-    .seccion__recientes__movies,
-    .section__movies__destacadas__movies {
-        justify-content: center;
-    }
     .section {
         padding: 8.5rem 1rem;
     }
 }
-@media screen and (max-width:423px) {
+@media screen and (max-width:600px) {
     .section {
         padding: 12rem 1rem;
+    }
+    .seccion__recientes__movies,
+    .section__movies__destacadas__movies {
+        justify-content: center;
+    }
+    .movie__details {
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }
