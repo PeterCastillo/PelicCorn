@@ -13,8 +13,9 @@ const recientes = async() => {
             <div class="movie__info" date-id="${element.id}">
                 <div>
                     <span>${element.title}</span>
+                    <i class="fa-solid fa-plus"></i>
                 </div>
-                <p>Castillo Canchari</p>
+                <span>${element.title}</span>
             </div>
         `
         div.innerHTML = divContent
@@ -22,3 +23,4 @@ const recientes = async() => {
         recientesContainer.appendChild(fragmento)
     });
 }
+
