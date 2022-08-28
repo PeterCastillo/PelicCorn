@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>PelisCorn</title>
 </head>
 <body>
@@ -28,116 +29,28 @@
             <div class="nav__categories"></div>
         </nav>
     </header>
-
-    
     <section class="section">
+
         <div class="seccion__recientes">
             <span class="seccion__name">Reciente</span>
-            <div class="seccion__recientes__movies">
-                <div class="movie">
-                    <img class="movie__img" src="Peter.jpg" alt="">
-                    <span class="movie__name">Peter Jack Castillo canchari </span>
-                </div>
-                <div class="movie">
-                    <img class="movie__img" src="Peter.jpg" alt="">
-                    <span class="movie__name">Peter Jack Castillo canchari </span>
-                </div><div class="movie">
-                    <img class="movie__img" src="Peter.jpg" alt="">
-                    <span class="movie__name">Peter Jack Castillo canchari </span>
-                </div>
-                <div class="movie">
-                    <img class="movie__img" src="Peter.jpg" alt="">
-                    <span class="movie__name">Peter Jack Castillo canchari </span>
-                </div>
-                <div class="movie">
-                    <img class="movie__img" src="Peter.jpg" alt="">
-                    <span class="movie__name">Peter Jack Castillo canchari </span>
-                </div>
-                <div class="movie">
-                    <img class="movie__img" src="Peter.jpg" alt="">
-                    <span class="movie__name">Peter Jack Castillo canchari </span>
-                </div><div class="movie">
-                    <img class="movie__img" src="Peter.jpg" alt="">
-                    <span class="movie__name">Peter Jack Castillo canchari </span>
-                </div>
-                <div class="movie">
-                    <img class="movie__img" src="Peter.jpg" alt="">
-                    <span class="movie__name">Peter Jack Castillo canchari </span>
-                </div>
-                <div class="movie">
-                    <img class="movie__img" src="Peter.jpg" alt="">
-                    <span class="movie__name">Peter Jack Castillo canchari </span>
-                </div>
-                <div class="movie">
-                    <img class="movie__img" src="Peter.jpg" alt="">
-                    <span class="movie__name">Peter Jack Castillo canchari </span>
-                </div><div class="movie">
-                    <img class="movie__img" src="Peter.jpg" alt="">
-                    <span class="movie__name">Peter Jack Castillo canchari </span>
-                </div>
-                <div class="movie">
-                    <img class="movie__img" src="Peter.jpg" alt="">
-                    <span class="movie__name">Peter Jack Castillo canchari </span>
-                </div>
-                <div class="movie">
-                    <img class="movie__img" src="Peter.jpg" alt="">
-                    <span class="movie__name">Peter Jack Castillo canchari </span>
-                </div>
-                
-            </div>
+            <div class="seccion__recientes__movies"></div>
         </div>
         <div class="section__movies">
             <div class="section__movies__movies">
-                <span class="seccion__name">Favoritos</span>
-                <div class="section__movies__destacadas__movies">
-                    <div class="movie-mini">
-                        <img class="movie__img" src="Peter.jpg" alt="">
-                    </div>
-                    <div class="movie-mini">
-                        <img class="movie__img" src="Peter.jpg" alt="">
-                    </div>
-                    <div class="movie-mini">
-                        <img class="movie__img" src="Peter.jpg" alt="">
-                    </div>
-                    <div class="movie-mini">
-                        <img class="movie__img" src="Peter.jpg" alt="">
-                    </div>
-                    <div class="movie-mini">
-                        <img class="movie__img" src="Peter.jpg" alt="">
-                    </div>
-                    <div class="movie-mini">
-                        <img class="movie__img" src="Peter.jpg" alt="">
-                    </div>
-                </div>
+                <span class="seccion__name">Tendencia</span>
+                <div class="section__movies__destacadas__movies tendencia"></div>
             </div>
             <div class="section__movies__movies">
                 <span class="seccion__name">Favoritos</span>
-                <div class="section__movies__destacadas__movies">
-                    <div class="movie-mini">
-                        <img class="movie__img" src="Peter.jpg" alt="">
-                    </div>
-                    <div class="movie-mini">
-                        <img class="movie__img" src="Peter.jpg" alt="">
-                    </div>
-                    <div class="movie-mini">
-                        <img class="movie__img" src="Peter.jpg" alt="">
-                    </div>
-                    <div class="movie-mini">
-                        <img class="movie__img" src="Peter.jpg" alt="">
-                    </div>
-                    <div class="movie-mini">
-                        <img class="movie__img" src="Peter.jpg" alt="">
-                    </div>
-                    <div class="movie-mini">
-                        <img class="movie__img" src="Peter.jpg" alt="">
-                    </div>
-                </div>
+                <div class="section__movies__destacadas__movies"></div>
             </div>
         </div>
-
     </section>
 
-
+    <script src="src/Home.js"></script>
+    <script src="src/axios.js"></script>
+    <script src="src/tendencia.js"></script>
     <script src="src/catergories.js"></script>
+    <script src="src/recientes.js"></script>
 </body>
 </html>
