@@ -8,7 +8,7 @@ const tendencia = async() => {
         let div = document.createElement('div');
         div.classList.add('movie-mini');
         const divContent = `
-            <img class="movie__img" src="https://image.tmdb.org/t/p/w300${element.poster_path}" alt="${element.title}" data-id="${element.id}">
+            <img class="movie__img Selected" src="https://image.tmdb.org/t/p/w300${element.poster_path}" alt="${element.title}" data-id="${element.id}">
         `
         div.innerHTML = divContent
         fragmento.appendChild(div);

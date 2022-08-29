@@ -14,12 +14,12 @@ const moviesSelected = (movies , type) => {
         let div = document.createElement('div');
         div.classList.add('movie');
         const divContent = `
-            <img class="movie__img" src="https://image.tmdb.org/t/p/w300${element.poster_path}" alt="${element.title}" data-id="${element.id}">
+            <img class="movie__img Selected" src="https://image.tmdb.org/t/p/w300${element.poster_path}" alt="${element.title}" data-id="${element.id}">
             <span class="movie__name">${element.title}</span>
-            <div class="movie__info" data-id="${element.id}">
+            <div class="movie__info Selected" data-id="${element.id}">
                 <div>
                     <span>${element.title}</span>
-                    <i class="fa-solid fa-plus" date-id="${element.id}"></i>
+                    <i class="fa-solid fa-plus Favorito" data-id="${element.id}"></i>
                 </div>
                 <span>Estreno: ${element.release_date}</span>
             </div>

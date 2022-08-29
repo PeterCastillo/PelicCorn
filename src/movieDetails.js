@@ -5,7 +5,7 @@ containerMovies.addEventListener('click' , (e) => {
 })
 
 const settMovie = async(e) => {
-    if(e.target.hasAttribute('data-id')){
+    if(e.target.classList.contains('Selected')){
         const nombre = e.target.parentElement.querySelector('img');
         location.hash = `/Movie/${nombre.alt}/${e.target.dataset.id}`
     }
@@ -42,7 +42,7 @@ const movieSelected = (movie, related) => {
                 element.name
             )
             }).join(' , ')}</span>
-            <button date-id="${movie.id}">Añadir a Favoritos</button>
+            <button class="Favorito" data-id="${movie.id}">Añadir a Favoritos</button>
         </div>
     </div>
     `
@@ -53,17 +53,32 @@ const movieSelected = (movie, related) => {
     let divRelated = document.createElement('div');
     divRelated.classList.add('related')
 
+
     let span = document.createElement('span');
     span.innerHTML = 'Movies Relacionadas';
     fragmento.appendChild(span);
     divRelated.appendChild(fragmento);
+
+    if(related.length < 1){
+        let div = document.createElement('div');
+        div.classList.add('errorRelated');
+        let span = document.createElement('span');
+        span.innerHTML = `<i class="fa-solid fa-magnifying-glass-minus"></i> No encontramos movies relacionadas. Quizas luego.`
+        div.appendChild(span);
+        divRelated.appendChild(div);
+
+
+        fragmento.appendChild(divRelated);
+        moviesContainer.appendChild(fragmento);
+        return
+    }
 
     let divContinerRelated = document.createElement('div')
     related.forEach(element => {
         let div = document.createElement('div');
         div.classList.add('movie-mini');
         const relatedContent = `
-            <img class="movie__img" src="https://image.tmdb.org/t/p/w300${element.poster_path}" alt="${element.title}" data-id="${element.id}">
+            <img class="movie__img Selected" src="https://image.tmdb.org/t/p/w300${element.poster_path}" alt="${element.title}" data-id="${element.id}">
         `
         div.innerHTML = relatedContent;
         fragmento.appendChild(div);
@@ -74,6 +89,4 @@ const movieSelected = (movie, related) => {
 
     fragmento.appendChild(divRelated);
     moviesContainer.appendChild(fragmento);
-
-    
 };

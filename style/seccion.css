@@ -87,7 +87,33 @@
 .movie__img:hover  ~  .holas  {
     display: none;
 }
-
+.error {
+    height: 30rem;
+    background-color: var(--color-letter);
+    color: var(--color-font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.7rem;
+}
+.errorRelated {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.7rem;
+    background-color: var(--color-letter);
+    color: var(--color-font);
+}
+.errorRelated > span {
+    font-size: 35px;
+    display: inline-block;
+    text-align: center;
+}
+.error > span {
+    font-size: 30px;
+    display: inline-block;
+    text-align: center;
+}
 
 .movie__name {
     font-size: 12px;
@@ -107,6 +133,27 @@
     height: 7.5rem;
     position: relative;
 }
+
+.movie-mini-hover {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    top: 0;
+    border: 0.7rem;
+    cursor: pointer;
+    right: 0;
+    padding: 0.7rem;
+    border-radius: 0.2rem 0.7rem 0.2rem 0.2rem;
+    margin: auto;
+    font-size: 10px;
+    background-color: var(--color-font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-letter);
+    z-index: 50;
+}
+
 .movie-mini img {
     cursor: pointer;
 }
@@ -138,6 +185,7 @@
     width: 100%;
     background-color: var(--color-letter);
     border-radius: 0.7rem;
+    justify-content: center;
     padding: 0.8rem;
     gap: 1rem;
 }
@@ -187,7 +235,7 @@
     gap: 0.5rem;
     width: 100;
 }
-.related span {
+.related > span {
     color: var(--color-letter);
 }
 .related div {
@@ -197,7 +245,7 @@
     justify-content: center;
 }
 
-@media screen and (max-width:976px){
+@media screen and (max-width:1000px){
     .seccion__recientes {
         max-width: 60rem;
     }
