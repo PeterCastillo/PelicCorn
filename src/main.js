@@ -17,4 +17,13 @@ window.addEventListener('hashchange', (hash) => {
     if(newHash[1] == 'Categoria'){
         searchCategoria(newHash[3],newHash[2])
     }
+    if(newHash[1] == 'search'){
+        searchValue(newHash[2])
+    }
 })
+
+const home = document.querySelector('.nav__navegation__logo');
+
+home.addEventListener('click' , () => {
+    location.hash = 'Home'
+});

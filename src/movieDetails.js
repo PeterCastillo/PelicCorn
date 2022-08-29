@@ -11,13 +11,20 @@ const settMovie = async(e) => {
     }
 }
 
+const getRelatedMovies = async(id) => {
+    const {data} = await api(`/movie/${id}/recommendations`)
+    const relatedMovies = data.results
+    return relatedMovies
+};
+
+
 const searchMovie = async(id) =>{
     const {data:movie} = await api(`movie/${id}`);
-    console.log(movie)
-    movieSelected(movie);
+    const related = await getRelatedMovies(id);
+    movieSelected(movie, related);
 }
 
-const movieSelected = (movie) => {
+const movieSelected = (movie, related) => {
     containerMovies.querySelector('span').textContent = 'Movie'
     containerMovies.querySelector('div .seccion__recientes__movies').innerHTML = '';
     let div = document.createElement('div');
@@ -35,11 +42,38 @@ const movieSelected = (movie) => {
                 element.name
             )
             }).join(' , ')}</span>
-            <button data-id="${movie.id}">Añadir a Favoritos</button>
+            <button date-id="${movie.id}">Añadir a Favoritos</button>
         </div>
     </div>
     `
     div.innerHTML = divContent;
     fragmento.appendChild(div);
     moviesContainer.appendChild(fragmento);
+
+    let divRelated = document.createElement('div');
+    divRelated.classList.add('related')
+
+    let span = document.createElement('span');
+    span.innerHTML = 'Movies Relacionadas';
+    fragmento.appendChild(span);
+    divRelated.appendChild(fragmento);
+
+    let divContinerRelated = document.createElement('div')
+    related.forEach(element => {
+        let div = document.createElement('div');
+        div.classList.add('movie-mini');
+        const relatedContent = `
+            <img class="movie__img" src="https://image.tmdb.org/t/p/w300${element.poster_path}" alt="${element.title}" data-id="${element.id}">
+        `
+        div.innerHTML = relatedContent;
+        fragmento.appendChild(div);
+        divContinerRelated.appendChild(fragmento)
+    });
+    fragmento.appendChild(divContinerRelated)
+    divRelated.appendChild(fragmento);
+
+    fragmento.appendChild(divRelated);
+    moviesContainer.appendChild(fragmento);
+
+    
 };

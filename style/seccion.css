@@ -178,6 +178,25 @@
     background-color: var(--color-letter);
 }
 
+.related {
+    background-color: var(--color-font);
+    border-radius: 0.7rem;
+    display: flex;
+    padding: 0.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100;
+}
+.related span {
+    color: var(--color-letter);
+}
+.related div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
 @media screen and (max-width:976px){
     .seccion__recientes {
         max-width: 60rem;

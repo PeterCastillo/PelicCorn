@@ -21,7 +21,7 @@ const moviesSelected = (movies , type) => {
                     <span>${element.title}</span>
                     <i class="fa-solid fa-plus" date-id="${element.id}"></i>
                 </div>
-                <span>${element.title}</span>
+                <span>Estreno: ${element.release_date}</span>
             </div>
         `
         div.innerHTML = divContent

@@ -75,3 +75,7 @@
     background-color: var(--color-letter);
     color: var(--color-font);
 }
+
+.nav__navegation__logo {
+    cursor: pointer;
+}

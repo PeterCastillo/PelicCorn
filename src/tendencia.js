@@ -3,7 +3,7 @@ const tendenciaContainer = document.querySelector('.tendencia')
 const tendencia = async() => {
     const {data} = await api(`trending/movie/day`)
     const movies = await data.results
-    for (let index = 0; index < 7; index++) {
+    for (let index = 0; index < 6; index++) {
         const element = movies[index];
         let div = document.createElement('div');
         div.classList.add('movie-mini');
