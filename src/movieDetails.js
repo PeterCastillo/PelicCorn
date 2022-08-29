@@ -26,6 +26,7 @@ const searchMovie = async(id) =>{
 
 const movieSelected = (movie, related) => {
     containerMovies.querySelector('span').textContent = 'Movie'
+    containerMovies.querySelector('.seccion__recientes .moreMovies').style.display = "none";
     containerMovies.querySelector('div .seccion__recientes__movies').innerHTML = '';
     let div = document.createElement('div');
     div.classList.add('movie__details')
@@ -47,8 +48,17 @@ const movieSelected = (movie, related) => {
     </div>
     `
     div.innerHTML = divContent;
+
+    div.querySelector('img').addEventListener('error', () => {
+        div.querySelector('img').setAttribute('src', 'https://www.lahsa.org/service/get-image')
+        
+    });
+
     fragmento.appendChild(div);
     moviesContainer.appendChild(fragmento);
+
+
+
 
     let divRelated = document.createElement('div');
     divRelated.classList.add('related')
@@ -78,12 +88,21 @@ const movieSelected = (movie, related) => {
         let div = document.createElement('div');
         div.classList.add('movie-mini');
         const relatedContent = `
-            <img class="movie__img Selected" src="https://image.tmdb.org/t/p/w300${element.poster_path}" alt="${element.title}" data-id="${element.id}">
+            <img class="movie__img Selected" data-img="https://image.tmdb.org/t/p/w300${element.poster_path}" alt="${element.title}" data-id="${element.id}">
         `
         div.innerHTML = relatedContent;
+
+        div.querySelector('img').addEventListener('error', () => {
+            div.querySelector('img').setAttribute('src', 'https://www.lahsa.org/service/get-image')
+        });
+
+        lazyLoader.observe(div.querySelector('img'))
+
         fragmento.appendChild(div);
         divContinerRelated.appendChild(fragmento)
     });
+
+
     fragmento.appendChild(divContinerRelated)
     divRelated.appendChild(fragmento);
 

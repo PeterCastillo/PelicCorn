@@ -27,12 +27,14 @@ const selectCategoria = (e) => {
 };
 
 const searchCategoria = async(id, category) => {
+    moviesContainer.innerHTML = '';
+    moviesContainer.innerHTML = 'PANTALLA DE CARGA ANTES DE QUE CARGE LA DATA';
     const {data} = await api('discover/movie', {
         params: {
             with_genres: id,
         },
     });
-    const movies = data.results;
+    const movies = await data.results;
     moviesSelected(movies,category);
 };
 

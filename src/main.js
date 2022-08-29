@@ -3,6 +3,10 @@ window.addEventListener('load',() => {
     recientes();
     tendencia();
     categorias();
+    if(localStorage.getItem('favoritos')){
+        favoritos = JSON.parse(localStorage.getItem('favoritos'));
+        setFavoritos();
+    }
 })
 
 window.addEventListener('hashchange', (hash) => {

@@ -35,5 +35,6 @@ const setFavoritos = () => {
         fragmento.appendChild(div);
         favoritosContainer.appendChild(fragmento)
     });
+    localStorage.setItem('favoritos', JSON.stringify(favoritos))
 };
 

@@ -3,6 +3,7 @@ const searchBtn = document.querySelector('.searchBtn');
 
 searchBtn.addEventListener('click' , () => {
     location.hash = `/search/${search.value}`;
+    search.value = '';
 });
 
 const searchValue = async(query) => {

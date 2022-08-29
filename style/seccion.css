@@ -245,6 +245,23 @@
     justify-content: center;
 }
 
+
+.moreMovies {
+    width: 100%;
+    background-color: var(--color-font);
+    padding: 0.7rem 0rem 0.7rem 0.7rem;
+    border-radius: 0.7rem;
+    color: var(--color-letter);
+    border: solid 2px var(--color-letter);
+    cursor: pointer;
+    text-align: center;
+}
+.moreMovies:hover {
+    background-color: var(--color-letter);
+    border-color: var(--color-font);
+    color: var(--color-font);
+}
+
 @media screen and (max-width:1000px){
     .seccion__recientes {
         max-width: 60rem;
