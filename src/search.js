@@ -6,13 +6,20 @@ searchBtn.addEventListener('click' , () => {
     search.value = '';
 });
 
-const searchValue = async(query) => {
+const searchValue = async(query,page) => {
     const { data } = await api('search/movie', {
         params: {
             query,
+            page:page
         }
     });
     const movies = data.results;
+    
+    if(page > 1){
+        settMovies(movies);
+        return
+    }
+    
     if(movies.length < 1){
         moviesContainer.innerHTML = ''; 
         moviesType.innerHTML = query

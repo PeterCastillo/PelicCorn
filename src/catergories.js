@@ -26,15 +26,20 @@ const selectCategoria = (e) => {
     }
 };
 
-const searchCategoria = async(id, category) => {
-    moviesContainer.innerHTML = '';
-    moviesContainer.innerHTML = 'PANTALLA DE CARGA ANTES DE QUE CARGE LA DATA';
+const searchCategoria = async(id, category,page) => {
+    // moviesContainer.innerHTML = '';
+    // moviesContainer.innerHTML = 'PANTALLA DE CARGA ANTES DE QUE CARGE LA DATA';
     const {data} = await api('discover/movie', {
         params: {
             with_genres: id,
+            page:page
         },
     });
     const movies = await data.results;
+    if(page > 1){
+        settMovies(movies);
+        return
+    }
     moviesSelected(movies,category);
 };
 

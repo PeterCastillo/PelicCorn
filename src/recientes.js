@@ -1,13 +1,19 @@
 const moviesContainer = document.querySelector('.seccion__recientes__movies');
 const moviesType = document.querySelector('.seccion__name')
 
-const recientes = async() => {
-    const {data} = await api(`discover/movie`,)
+const recientes = async(page) => {
+    const {data} = await api(`discover/movie`, {
+        params: {
+           page: page
+        },
+    })
     const movies = await data.results
+    if(page > 1){
+        settMovies(movies);
+        return
+    }
     moviesSelected(movies , 'Recientes')
 };
-
-
 
 
 
@@ -24,6 +30,10 @@ const moviesSelected = (movies , type) => {
     moviesType.innerHTML = type;
     moviesContainer.innerHTML = '';
     containerMovies.querySelector('.seccion__recientes .moreMovies').style.display = "block";
+    settMovies(movies)
+};
+
+const settMovies = (movies) => {
     movies.forEach(element => {
         let div = document.createElement('div');
         div.classList.add('movie');
@@ -49,4 +59,4 @@ const moviesSelected = (movies , type) => {
         fragmento.appendChild(div);
         moviesContainer.appendChild(fragmento)
     });
-};
+}
