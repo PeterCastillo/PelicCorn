@@ -1,0 +1,37 @@
+.footer__container {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-font);
+    height: 8rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer__link {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer span, .footer__api a {
+    font-size: 1.2rem;
+    color:  var(--color-letter);
+}
+
+.footer a{
+    font-size: 2rem;
+    color:  var(--color-letter);
+    text-decoration:none;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.footer__api a {
+    font-size: 1.2rem;
+}
