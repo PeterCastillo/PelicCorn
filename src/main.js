@@ -10,6 +10,8 @@ window.addEventListener('load',() => {
 })
 
 window.addEventListener('hashchange', (hash) => {
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
     counter=1;
     if(location.hash == '#Home'){
         recientes(counter);
