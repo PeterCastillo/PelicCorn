@@ -84,6 +84,7 @@ const movieSelected = (movie, related) => {
     }
 
     let divContinerRelated = document.createElement('div')
+    divContinerRelated.classList.add('relatedMovies')
     related.forEach(element => {
         let div = document.createElement('div');
         div.classList.add('movie-mini');
