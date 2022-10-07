@@ -1,12 +1,27 @@
 window.addEventListener('load',() => { 
-    location.hash = 'Home'
-    recientes();
     tendencia();
     categorias();
     if(localStorage.getItem('favoritos')){
         favoritos = JSON.parse(localStorage.getItem('favoritos'));
         setFavoritos();
     }
+    if(location.hash){
+        let newHash = location.hash;   
+        newHash = newHash.split('/');
+        if(newHash[1] == 'Movie'){
+            searchMovie(newHash[3])
+            return
+        }
+        if(newHash[1] == 'Categoria'){
+            searchCategoria(newHash[3],newHash[2],counter)
+            return
+        }
+        if(newHash[1] == 'search'){
+            searchValue(newHash[2],counter)
+            return
+        }
+    }
+    recientes();
 })
 
 window.addEventListener('hashchange', (hash) => {

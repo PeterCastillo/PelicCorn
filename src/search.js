@@ -31,6 +31,7 @@ const searchValue = async(query,page) => {
         div.appendChild(span);
         fragmento.appendChild(div)
         moviesContainer.appendChild(fragmento)
+        btnShowMoreMovies.style.display = "none"
         return
     }
     moviesSelected(movies,query)
